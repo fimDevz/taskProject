@@ -14,6 +14,9 @@ backgroundColor: Colors.white,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
+                  SizedBox(
+                    height: 20,
+                  ),
                   Text(
                     "Sign Up",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25.0),

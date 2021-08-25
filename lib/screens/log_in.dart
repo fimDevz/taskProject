@@ -13,6 +13,9 @@ class LogIn extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                SizedBox(
+                  height: 20,
+                ),
                 Text(
                   "LOGIN",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25.0),
