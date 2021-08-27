@@ -6,6 +6,7 @@ import 'package:task_project/screens/admin/payment_method.dart';
 import 'package:task_project/screens/admin/refund_detail.dart';
 import 'package:task_project/screens/admin/track_booking.dart';
 import 'package:task_project/screens/admin/user_detail.dart';
+import 'package:task_project/screens/profile.dart';
 
 import 'make_booking.dart';
 
@@ -29,6 +30,21 @@ class _BookingMainPageState extends State<BookingMainPage> {
           child: SingleChildScrollView(
             child: Column(
               children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("My Profile",style: TextStyle(fontSize: 20,color: Colors.green),),
+                    IconButton(
+                        alignment: Alignment.center,
+                        icon: Icon(Icons.person,), onPressed: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => MyProfile()),
+                      );
+                    }),
+                  ],
+                ),
                 SizedBox(
                   height: 20,
                 ),
