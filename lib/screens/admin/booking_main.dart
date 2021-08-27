@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:task_project/screens/admin/addBus.dart';
 import 'package:task_project/screens/admin/invoice.dart';
 import 'package:task_project/screens/admin/manage_cancellantion_of_seat.dart';
 import 'package:task_project/screens/admin/payment_method.dart';
@@ -33,16 +34,22 @@ class _BookingMainPageState extends State<BookingMainPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("My Profile",style: TextStyle(fontSize: 20,color: Colors.green),),
+                    Text(
+                      "My Profile",
+                      style: TextStyle(fontSize: 20, color: Colors.green),
+                    ),
                     IconButton(
                         alignment: Alignment.center,
-                        icon: Icon(Icons.person,), onPressed: (){
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => MyProfile()),
-                      );
-                    }),
+                        icon: Icon(
+                          Icons.person,
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MyProfile()),
+                          );
+                        }),
                   ],
                 ),
                 SizedBox(
@@ -66,6 +73,54 @@ class _BookingMainPageState extends State<BookingMainPage> {
                       size: 40,
                     )
                   ],
+                ),
+                SizedBox(
+                  height: 14,
+                ),
+                Text(
+                  "Add Bus",
+                  style: TextStyle(fontSize: 16),
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 20),
+                  height: 240,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      Container(
+                        width: 160,
+                        child: Card(
+                          child: Wrap(
+                            children: [
+                              Image.asset("assets/track.jpg"),
+                              ListTile(
+                                title: Text("Heading1"),
+                                subtitle: Text("Subtitle1"),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.green,
+                          shape: BoxShape.circle,
+                        ),
+                        child: IconButton(
+                          icon: Icon(
+                            Icons.arrow_forward_rounded,
+                            color: Colors.white,
+                          ),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => AddBusPage()));
+                          },
+                        ),
+                      )
+                    ],
+                  ),
                 ),
                 SizedBox(
                   height: 14,
@@ -395,6 +450,5 @@ class _BookingMainPageState extends State<BookingMainPage> {
         ),
       ),
     );
-    ;
   }
 }
