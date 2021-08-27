@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:task_project/screens/log_in.dart';
 
 class SignUp extends StatelessWidget {
   @override
@@ -7,7 +9,7 @@ class SignUp extends StatelessWidget {
     return Container(
       color: Colors.blue,
       child: Scaffold(
-backgroundColor: Colors.white,
+        backgroundColor: Colors.white,
         body: SafeArea(
           child: SingleChildScrollView(
             child: Form(
@@ -17,12 +19,35 @@ backgroundColor: Colors.white,
                   SizedBox(
                     height: 20,
                   ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Welcome to Mianwali"
+                        "\nCoach Service Booking",
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.w800,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Icon(
+                        CupertinoIcons.bus,
+                        color: Colors.green,
+                        size: 40,
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
                   Text(
                     "Sign Up",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25.0),
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 25.0),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(right: 40.0, left: 40.0),
+                    padding: EdgeInsets.only(top: 20, right: 40.0, left: 40.0),
                     child: TextFormField(
                       validator: (val) =>
                           val.isEmpty ? 'Enter a User Name' : null,
@@ -39,7 +64,8 @@ backgroundColor: Colors.white,
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(right: 40.0, left: 40.0, top: 20.0),
+                    padding:
+                        EdgeInsets.only(right: 40.0, left: 40.0, top: 20.0),
                     child: TextFormField(
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
@@ -54,7 +80,8 @@ backgroundColor: Colors.white,
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(right: 40.0, left: 40.0, top: 20.0),
+                    padding:
+                        EdgeInsets.only(right: 40.0, left: 40.0, top: 20.0),
                     child: TextFormField(
                       obscureText: true,
                       decoration: InputDecoration(
@@ -76,7 +103,7 @@ backgroundColor: Colors.white,
                   ),
                   RaisedButton(
                       elevation: 6.0,
-                      color: Colors.green.shade300,
+                      color: Colors.green,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30)),
                       child: Padding(
@@ -91,6 +118,10 @@ backgroundColor: Colors.white,
                         ),
                       ),
                       onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => LogIn()),
+                        );
                       }),
                 ],
               ),
